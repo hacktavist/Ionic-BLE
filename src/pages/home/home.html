@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-buttons>
+    <button (click)="Hello()">Hi There</button>
+    <button (click)="StartScanning()">Scan</button>
+  </ion-buttons>
+
+<div class="card">
+      <div class="item item-divider">
+        Devices Found
+      </div>
+      <div class="item">
+        <ul class="list">
+          <li class="item item-button-right" *ngFor="let device of deviceProperties.GetDevice()">
+            {{device.id}} : {{device.name}}
+            <button class="button button-balanced">
+            connect
+            </button>
+          </li>
+
+        </ul>
+      </div>
+    </div>
 </ion-content>
